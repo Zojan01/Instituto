@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProyectFinal</name>
+    </assembly>
+    <members>
+        <member name="M:ProyectFinal.Controllers.CursosController.Get(System.Int32)">
+            <summary>
+            Metodo get para optener todos los cursos que se encuentra en la base de datos
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProyectFinal.Controllers.CursosController.Post(Model.Cursos)">
+            <summary>
+            Este metodo nos servira  para agregar el curso.
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProyectFinal.Controllers.CursosController.Put(Model.Cursos)">
+            <summary>
+            Me todo para actualizar , se pasa el objeto curso y desde el id del objeto se procedera a hacer las modifciaciones.
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProyectFinal.Controllers.CursosController.Delete(System.Int32)">
+            <summary>
+            Metodo para elimar curos 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
