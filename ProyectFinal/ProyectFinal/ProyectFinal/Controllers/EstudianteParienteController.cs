@@ -32,10 +32,10 @@ namespace ProyectFinal.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(int id,string idd)
         {
             return Ok(
-                _estudiantePariente.Get(id));
+                _estudiantePariente.Get(id,idd));
         }
 
         // POST api/values
@@ -55,12 +55,12 @@ namespace ProyectFinal.Controllers
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        [HttpDelete("{id},{idd}")]
+        public IActionResult Delete(int id,string idd)
         {
 
             return Ok(
-                _estudiantePariente.Delete(id));
+                _estudiantePariente.Delete(id,idd));
 
         }
     }

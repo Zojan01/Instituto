@@ -27,8 +27,32 @@ namespace Service
             _projectDbContext = projectDbContex;
         }
 
+        public ParientesService()
+        {
+        }
 
-     
+
+        public List<String> Errores { get; private set; }
+        public bool Esvalido(Parientes model)
+        {
+            Errores = new List<string>();
+            var valido = true;
+
+            if (string.IsNullOrWhiteSpace(model.Nombre))
+            {
+                Errores.Add("El nombre de la persona es requerido");
+                valido = false;
+            }
+
+            if (model.Cedula.Length != 11)
+            {
+                Errores.Add("La cedula que ha ingresado no cumple con la cantidad de digitos de una cedula");
+                valido = false;
+            }
+           
+            return valido;
+        }
+
         public IEnumerable<Parientes> GetAll()
         {
 

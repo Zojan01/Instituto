@@ -27,6 +27,32 @@ namespace Service
             _projectDbContext = projectDbContex;
         }
 
+        public CursosService()
+        {
+        }
+
+        public List<String> Errores { get; private set; }
+        public bool Esvalido(Cursos model)
+        {
+            Errores = new List<string>();
+            var valido = true;
+
+            if (string.IsNullOrWhiteSpace(model.CursoNombre))
+            {
+                Errores.Add("El  nombre del curso es requerido");
+                valido = false;
+            }
+
+            if (model.CursoGrado != "1" || model.CursoGrado != "2" || model.CursoGrado != "3" || model.CursoGrado != "4" || model.CursoGrado != "5")
+            {
+                Errores.Add("El Grado del curso no se encuentra entre los cursos validos");
+                valido = false;
+            }
+          
+
+            return valido;
+        }
+
 
         //Trabajando con el  Crud de la entidad Cursos
         public IEnumerable<Cursos> GetAll()
