@@ -12,10 +12,10 @@ namespace Service
     public interface IEstudianteParienteService
     {
         IEnumerable<EstudiantePariente> GetAll();
-        EstudiantePariente Get(int id); 
+        EstudiantePariente Get(int id, String idd);
         bool Add(EstudiantePariente model);
         bool Update(EstudiantePariente model);
-        bool Delete(int id);
+        bool Delete(int id, String idd);
 
     }   
     public class EstudianteParienteService : IEstudianteParienteService
@@ -53,7 +53,7 @@ namespace Service
 
             try
             {
-                result = _projectDbContext.EstudianteParientes.Single(x => x.IdEstudiante == id && x.IdPariente == idd);
+                result = _projectDbContext.EstudianteParientes.Single(x => x.IdEstudiante == id);
             }
             catch (System.Exception)
             {
@@ -86,6 +86,7 @@ namespace Service
 
                 originalModel.IdPariente = model.IdPariente;
                 originalModel.IdEstudiante = model.IdEstudiante;
+                originalModel.TipoRelacion = model.TipoRelacion;
 
 
 
@@ -104,7 +105,7 @@ namespace Service
         {
             try
             {
-                _projectDbContext.Entry(new EstudiantePariente { IdEstudiante = id , IdPariente = idd }).State = EntityState.Deleted; ; 
+                _projectDbContext.Entry(new EstudiantePariente { IdEstudiante = id , IdPariente = idd }).State = EntityState.Deleted; 
                 _projectDbContext.SaveChanges();
             }
             catch (System.Exception)

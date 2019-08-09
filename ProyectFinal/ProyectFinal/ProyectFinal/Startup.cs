@@ -33,7 +33,7 @@ namespace ProyectFinal
 
 
 
-            services.AddTransient<ICursoService, CursoService>();
+           
             services.AddTransient<ICursosService, CursosService>();
             services.AddTransient<IProfesoresService, ProfesoresService>();
             services.AddTransient<IEstudiantesService, EstudiantesService>();

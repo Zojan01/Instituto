@@ -16,15 +16,46 @@ namespace Service
         bool Add(Estudiantes model);
         bool Update(Estudiantes model);
         bool Delete(int id);
+        bool Esvalido(Estudiantes model);
 
     }   
     public class EstudiantesService : IEstudiantesService
     {
         private readonly ProjectDbContext _projectDbContext;
+        public  List<String> Errores { get; private set; }
 
         public EstudiantesService(ProjectDbContext projectDbContex)
         {
             _projectDbContext = projectDbContex;
+        }
+
+        public EstudiantesService()
+        {
+        }
+
+        public bool Esvalido(Estudiantes model)
+        {
+            Errores = new List<string>();
+            var valido = true;
+
+            if (string.IsNullOrWhiteSpace(model.Nombre))
+            {
+                Errores.Add("El nombre de la persona es requerido");
+                valido = false;
+            }
+            if (string.IsNullOrWhiteSpace(model.Apellido))
+            {
+                Errores.Add("El apellido de la persona es requerido");
+                valido = false;
+            }
+            if (model.Edad < 18 || model.Edad > 90)
+            {
+                Errores.Add("La persona no se encuentra dentro de la edad requeridad que es de 18 a 90");
+                valido = false;
+            }
+
+
+            return false;
         }
 
 

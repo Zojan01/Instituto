@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectFinal", "ProyectFinal\ProyectFinal.csproj", "{F481A5E8-3774-40E2-95E2-BF7A6E75433D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProyectFinal", "ProyectFinal\ProyectFinal.csproj", "{F481A5E8-3774-40E2-95E2-BF7A6E75433D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{F83EDC3F-4A3F-459E-8A86-8C0B051773C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{F83EDC3F-4A3F-459E-8A86-8C0B051773C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{286D3205-E2E5-47AC-BF05-0CB6BD05DDBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{286D3205-E2E5-47AC-BF05-0CB6BD05DDBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{5F09E125-CC89-4FCC-B726-E81AC911C71C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{5F09E125-CC89-4FCC-B726-E81AC911C71C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectTest", "ParientesServiceTest\ProjectTest.csproj", "{BD48B246-6321-40FB-917D-E1232CBE234A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{5F09E125-CC89-4FCC-B726-E81AC911C71C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F09E125-CC89-4FCC-B726-E81AC911C71C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F09E125-CC89-4FCC-B726-E81AC911C71C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD48B246-6321-40FB-917D-E1232CBE234A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD48B246-6321-40FB-917D-E1232CBE234A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD48B246-6321-40FB-917D-E1232CBE234A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD48B246-6321-40FB-917D-E1232CBE234A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
