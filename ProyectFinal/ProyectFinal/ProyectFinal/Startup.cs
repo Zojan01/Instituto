@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Persistence;
 using Service;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace ProyectFinal
 {
@@ -39,9 +40,11 @@ namespace ProyectFinal
             services.AddTransient<IEstudiantesService, EstudiantesService>();
             services.AddTransient<IParientesService, ParientesService>();
             services.AddTransient<IEstudianteParienteService, EstudianteParienteService>();
-           
 
 
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1", new Info { Title = "Employee API", Version = "V1" });
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -58,6 +61,12 @@ namespace ProyectFinal
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "post API V1");
+            });
 
             app.UseHttpsRedirection();
             app.UseMvc();
