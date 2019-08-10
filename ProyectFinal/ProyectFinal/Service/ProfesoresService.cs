@@ -27,8 +27,37 @@ namespace Service
             _projectDbContext = projectDbContex;
         }
 
+        public ProfesoresService()
+        {
+        }
 
-      
+        public List<String> Errores { get; private set; }
+        public bool Esvalido(Profesores model)
+        {
+            Errores = new List<string>();
+            var valido = true;
+
+            if (string.IsNullOrWhiteSpace(model.Nombre))
+            {
+                Errores.Add("El nombre del profesor es requerido");
+                valido = false;
+            }
+
+            if (model.Telefono.Length != 10)
+            {
+                Errores.Add("El telefono ingresado le faltan digitos");
+                valido = false;
+            }
+            if (model.Id.Length != 5)
+            {
+                Errores.Add("El id de los profesores solo se limita a  5 digitos, verifique la cantidad de digitos ingresado");
+                valido = false;
+            }
+
+            return valido;
+        }
+
+
         public IEnumerable<Profesores> GetAll()
         {
 

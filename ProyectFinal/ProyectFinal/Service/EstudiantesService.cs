@@ -43,19 +43,20 @@ namespace Service
                 Errores.Add("El nombre de la persona es requerido");
                 valido = false;
             }
-            if (string.IsNullOrWhiteSpace(model.Apellido))
+            
+            if (model.Edad > 100)
             {
-                Errores.Add("El apellido de la persona es requerido");
+                Errores.Add("La persona no se encuentra dentro de la edad requeridad que es de 18 a 90");
                 valido = false;
             }
-            if (model.Edad < 18 || model.Edad > 90)
+            if (model.Edad < 0)
             {
                 Errores.Add("La persona no se encuentra dentro de la edad requeridad que es de 18 a 90");
                 valido = false;
             }
 
 
-            return false;
+            return valido;
         }
 
 

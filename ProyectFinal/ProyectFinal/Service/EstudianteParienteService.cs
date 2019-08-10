@@ -27,8 +27,9 @@ namespace Service
             _projectDbContext = projectDbContex;
         }
 
-
         
+
+
         public IEnumerable<EstudiantePariente> GetAll()
         {
 
